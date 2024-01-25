@@ -6,10 +6,10 @@ jobs:
     ubuntu:
         runs-on: ubuntu-latest
         steps:
+            - name: build
             - uses: actions/checkout@v3
             - name: Print datetime
-            - uses: self-hosted
-            run: |
+              run: |
                 current_date=$(date)
                 echo "Current date: $current_date"
     windows:
@@ -17,8 +17,7 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - name: Print datetime
-            - uses: self-hosted
-            run: |
+              run: |
                 $currentDate = Get-Date
                 Write-Host "Current date: $currentDate"
     macos:
@@ -26,16 +25,15 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - name: Print datetime
-            - uses: self-hosted
-            run: |
+              run: |
                 current_date=$(date)
                 echo "Current date: $current_date"
     finish:
         needs: [ubuntu, windows, macos]
         runs-on: ubuntu-latest
         steps:
-            - uses: self-hosted
-            run: |
+            - name: "Finishing"
+              run: |
                 echo "Workflow finished"
     
             
