@@ -14,5 +14,6 @@ jobs:
     - name: Create directory
       uses: actions/checkout@v4
       with:
+        repository: apache/tomcat
         ref: master
         path: ./new_dir
