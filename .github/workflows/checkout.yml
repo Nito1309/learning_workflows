@@ -1,0 +1,13 @@
+name: What_checkout_does
+on: push
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check files
+      uses: actions/checkout@v3
+    - name: Print files
+      run: |
+        ls -ltr
+        java -version
