@@ -6,26 +6,26 @@ jobs:
     ubuntu:
         runs-on: ubuntu-latest
         steps:
-            run: |
+        -   run: |
                 current_date=$(date)
                 echo "Current date: $current_date"
     windows:
         runs-on: windows-latest
         steps:
-            run: |
+        -   run: |
                 $currentDate = Get-Date
                 Write-Host "Current date: $currentDate"
     macos:
         runs-on: macos-latest
         steps:
-            run: |
+        -   run: |
                 current_date=$(date)
                 echo "Current date: $current_date"
     finish:
         needs: [ubuntu, windows, macos]
         runs-on: ubuntu-latest
         steps:
-            run: |
+        -   run: |
                 echo "Workflow finished"
     
             
