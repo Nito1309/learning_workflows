@@ -12,6 +12,6 @@ jobs:
         - name: Uploading artifact
           uses: actions/upload-artifact@v1
           with:
-            name: ${{TEST}}
+            name: ${{env.TEST}}
             path: ./artifacts
     
