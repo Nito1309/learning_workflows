@@ -1,0 +1,17 @@
+name: "Creating an artifact"
+on: push
+env: 
+    TEST: 'testArtifact'
+
+jobs:
+    checkout:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checking out
+          uses: actions/checkout@v4
+        - name: Uploading artifact
+          uses: actions/upload-artifact@v1
+          with:
+            name: ${{TEST}}
+            path: ./artifacts
+    
