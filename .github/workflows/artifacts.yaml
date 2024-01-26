@@ -1,5 +1,5 @@
 name: "Creating an artifact"
-on: push
+on: pull_request
 env: 
     TEST: 'testArtifact'
 
