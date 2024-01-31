@@ -20,7 +20,7 @@ jobs:
         - name: Creating an artifact
           uses: actions/upload-artifact@v1
           with: 
-            name: ${{FILE_NAME}}
+            name: $FILE_NAME
             path: ./artifact
 
 
