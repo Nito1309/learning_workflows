@@ -1,0 +1,29 @@
+name: My_first_pipeline
+on: push
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        env:
+            FILE_NAME: 'hello.py'
+        steps:                
+        - name: Checkout
+          uses: actions/checkout@v4
+        - name: Run script
+          run: python3 $FILE_NAME
+    build: 
+        needs: test
+        runs-on: ubuntu-latest
+        steps: 
+        - name: Checkout
+          uses: actions/checkout@v4
+        - name: Creating an artifact
+          uses: actions/upload-artifact@v1
+          with: 
+            name: ${{FILE_NAME}}
+            path: ./artifact
+
+
+
+
+
